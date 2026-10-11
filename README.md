@@ -2,6 +2,12 @@
 
 ![SafeRoute Navigator data flow](./WhatsApp%20Image%202026-10-09%20at%206.24.57%20PM.jpeg)
 
+<p align="center">
+  <a href="./app-release.apk">
+    <img src="https://img.shields.io/badge/Download-Android%20App-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download SafeRoute Navigator Android app">
+  </a>
+</p>
+
 SafeRoute Navigator is an environmental route-planning system that helps users compare route options using travel time, distance, air-pollution exposure, data freshness, and confidence. The system is designed around a Flutter Android app, a Node.js/Express backend, a scheduled Python ingestion worker, MongoDB Atlas, and external environmental and routing services.
 
 ## Project vision
