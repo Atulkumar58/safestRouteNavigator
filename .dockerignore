@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+**/.env
+**/.env.*
+Pipeline-A/.env
+node_modules
+Pipeline-A/.venv
+Pipeline-A/__pycache__
+Pipeline-A/.pytest_cache
+Pipeline-A/tests
+.secrets
+legacy
+*.log

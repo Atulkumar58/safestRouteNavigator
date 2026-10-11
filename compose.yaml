@@ -1,0 +1,54 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: saferoute-backend:local
+    env_file:
+      - .secrets/backend.env
+    environment:
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    init: true
+    mem_limit: 768m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  pipeline-a:
+    build:
+      context: ./Pipeline-A
+      dockerfile: Dockerfile
+    image: saferoute-pipeline-a:local
+    env_file:
+      - .secrets/pipeline-a.env
+    environment:
+      PIPELINE_HEALTH_PORT: "8081"
+    ports:
+      - "127.0.0.1:8081:8081"
+    restart: unless-stopped
+    init: true
+    mem_limit: 768m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8081/health/ready', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+node_modules/
+logs/
+
+# Local deployment secrets
+.secrets/*
+!.secrets/.gitkeep
+!.secrets/*.env.example
