@@ -3,7 +3,7 @@
 ![SafeRoute Navigator data flow](./WhatsApp%20Image%202026-10-09%20at%206.24.57%20PM.jpeg)
 
 <p align="center">
-  <a href="./app-release.apk">
+  <a href="https://raw.githubusercontent.com/Atulkumar58/safestRouteNavigator/main/app-release.apk" download="SafeRoute-Navigator.apk">
     <img src="https://img.shields.io/badge/Download-Android%20App-2ea44f?style=for-the-badge&logo=android&logoColor=white" alt="Download SafeRoute Navigator Android app">
   </a>
 </p>
